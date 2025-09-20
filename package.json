@@ -1,0 +1,12 @@
+{
+  "name": "afk-bot",
+  "version": "1.0.0",
+  "main": "afk_bot_with_http.js",
+  "scripts": {
+    "start": "node afk_bot_with_http.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mineflayer": "^4.20.0"
+  }
+}
