@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: minecraft-afk-bot-rexrtl
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 22504
+    domains:
+      - rexrtl.progamer.me
