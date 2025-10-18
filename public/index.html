@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft AFK Bot - rexrtl.progamer.me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Minecraft Bedrock AFK Bot</h1>
+            <p class="domain">rexrtl.progamer.me:22504</p>
+            <p>Keep your Minecraft character active while away</p>
+        </header>
 
+        <div class="status-panel">
+            <div id="status" class="status offline">🔴 OFFLINE</div>
+            <div id="connection-status" class="connection">Connecting to rexrtl.progamer.me...</div>
+            <div id="server-time" class="server-time"></div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="btn btn-start">🚀 Start AFK Bot</button>
+            <button id="stopBtn" class="btn btn-stop" disabled>🛑 Stop AFK Bot</button>
+            <button id="emergencyBtn" class="btn btn-emergency">🚨 Emergency Stop</button>
+        </div>
+
+        <div class="settings">
+            <h3>⚙️ Bot Settings</h3>
+            <div class="setting-group">
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" id="duration" value="120" min="1" max="480">
+            </div>
+            <div class="setting-group">
+                <label for="movementDelay">Movement Delay (seconds):</label>
+                <input type="number" id="movementDelay" value="30" min="5" max="300">
+            </div>
+            <div class="setting-group">
+                <label>Actions:</label>
+                <div class="checkboxes">
+                    <label><input type="checkbox" name="actions" value="jump" checked> Jump</label>
+                    <label><input type="checkbox" name="actions" value="move" checked> Move</label>
+                    <label><input type="checkbox" name="actions" value="look" checked> Look Around</label>
+                    <label><input type="checkbox" name="actions" value="sneak"> Sneak</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="log-container">
+            <h3>📝 Activity Log - rexrtl.progamer.me</h3>
+            <div id="log" class="log"></div>
+            <button id="clearLog" class="btn btn-clear">Clear Log</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use</h3>
+            <ol>
+                <li>Open Minecraft Bedrock Edition</li>
+                <li>Join your world/server</li>
+                <li>Configure settings above</li>
+                <li>Click "Start AFK Bot"</li>
+                <li>Keep this tab open (rexrtl.progamer.me)</li>
+                <li>Bot will perform anti-AFK actions automatically</li>
+            </ol>
+            
+            <div class="api-info">
+                <h4>🔧 API Endpoints</h4>
+                <code>POST /api/bot/start</code> - Start AFK bot<br>
+                <code>POST /api/bot/stop</code> - Stop AFK bot<br>
+                <code>GET /api/status</code> - Check server status<br>
+                <code>GET /api/bot/config</code> - Get bot configuration
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
